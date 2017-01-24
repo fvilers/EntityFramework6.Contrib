@@ -49,6 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDatabase.cs" />
+    <Compile Include="Infrastructure\IDbChangeTracker.cs" />
+    <Compile Include="IDbContext.cs" />
+    <Compile Include="Infrastructure\IDbContextConfiguration.cs" />
+    <Compile Include="Infrastructure\IDbEntityEntry.generic.cs" />
+    <Compile Include="Infrastructure\IDbEntityEntry.cs" />
+    <Compile Include="Validation\IDbEntityValidationResult.cs" />
+    <Compile Include="IDbModelBuilder.cs" />
+    <Compile Include="IDbSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
