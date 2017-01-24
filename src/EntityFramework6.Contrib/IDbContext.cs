@@ -1,4 +1,5 @@
 ﻿using EntityFramework6.Contrib.Infrastructure;
+using EntityFramework6.Contrib.Validation;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;

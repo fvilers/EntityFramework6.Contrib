@@ -52,20 +52,32 @@
     <Compile Include="DbContextContrib.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="Infrastructure\DbChangeTrackerAdapter.cs" />
+    <Compile Include="Infrastructure\DbCollectionEntryAdapter.cs" />
+    <Compile Include="Infrastructure\DbComplexPropertyEntryAdapter.cs" />
     <Compile Include="Infrastructure\DbContextConfigurationAdapter.cs" />
     <Compile Include="Infrastructure\DbEntityEntryAdapter.generic.cs" />
     <Compile Include="Infrastructure\DbEntityEntryAdapter.cs" />
+    <Compile Include="Infrastructure\DbMemberEntryAdapter.cs" />
+    <Compile Include="Infrastructure\DbPropertyEntryAdapter.cs" />
     <Compile Include="Infrastructure\DbPropertyValuesAdapter.cs" />
+    <Compile Include="Infrastructure\DbReferenceEntryAdapter.cs" />
     <Compile Include="Infrastructure\IDbChangeTracker.cs" />
     <Compile Include="IDbContext.cs" />
+    <Compile Include="Infrastructure\IDbCollectionEntry.cs" />
+    <Compile Include="Infrastructure\IDbComplexPropertyEntry.cs" />
     <Compile Include="Infrastructure\IDbContextConfiguration.cs" />
     <Compile Include="Infrastructure\IDbEntityEntry.generic.cs" />
     <Compile Include="Infrastructure\IDbEntityEntry.cs" />
+    <Compile Include="Infrastructure\IDbMemberEntry.cs" />
+    <Compile Include="Infrastructure\IDbPropertyEntry.cs" />
     <Compile Include="Infrastructure\IDbPropertyValues.cs" />
+    <Compile Include="Infrastructure\IDbReferenceEntry.cs" />
+    <Compile Include="Validation\DbEntityValidationResultAdapter.cs" />
     <Compile Include="Validation\IDbEntityValidationResult.cs" />
     <Compile Include="IDbModelBuilder.cs" />
     <Compile Include="IDbSet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validation\IDbValidationError.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
