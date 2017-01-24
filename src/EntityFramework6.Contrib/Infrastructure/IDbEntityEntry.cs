@@ -11,6 +11,7 @@ namespace EntityFramework6.Contrib.Infrastructure
         object Entity { get; }
         IDbPropertyValues OriginalValues { get; }
         EntityState State { get; set; }
+
         IDbEntityEntry<TEntity> Cast<TEntity>() where TEntity : class;
         IDbCollectionEntry Collection(string navigationProperty);
         IDbComplexPropertyEntry ComplexProperty(string propertyName);

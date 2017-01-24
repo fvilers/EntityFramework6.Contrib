@@ -6,6 +6,7 @@ namespace EntityFramework6.Contrib.Infrastructure
     {
         object this[string propertyName] { get; set; }
         IEnumerable<string> PropertyNames { get; }
+
         IDbPropertyValues Clone();
         TValue GetValue<TValue>(string propertyName);
         void SetValues(IDbPropertyValues propertyValues);
