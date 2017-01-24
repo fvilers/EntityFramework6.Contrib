@@ -60,6 +60,7 @@
     <Compile Include="Infrastructure\IDbContextConfiguration.cs" />
     <Compile Include="Infrastructure\IDbEntityEntry.generic.cs" />
     <Compile Include="Infrastructure\IDbEntityEntry.cs" />
+    <Compile Include="Infrastructure\IDbPropertyValues.cs" />
     <Compile Include="Validation\IDbEntityValidationResult.cs" />
     <Compile Include="IDbModelBuilder.cs" />
     <Compile Include="IDbSet.cs" />
