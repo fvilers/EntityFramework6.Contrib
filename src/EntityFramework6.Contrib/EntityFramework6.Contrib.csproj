@@ -52,6 +52,7 @@
     <Compile Include="DbContextContrib.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="Infrastructure\DbChangeTrackerAdapter.cs" />
+    <Compile Include="Infrastructure\DbContextConfigurationAdapter.cs" />
     <Compile Include="Infrastructure\DbEntityEntryAdapter.generic.cs" />
     <Compile Include="Infrastructure\DbEntityEntryAdapter.cs" />
     <Compile Include="Infrastructure\IDbChangeTracker.cs" />
