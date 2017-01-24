@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbContextContrib.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="Infrastructure\IDbChangeTracker.cs" />
     <Compile Include="IDbContext.cs" />
