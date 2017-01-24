@@ -51,6 +51,9 @@
   <ItemGroup>
     <Compile Include="DbContextContrib.cs" />
     <Compile Include="IDatabase.cs" />
+    <Compile Include="Infrastructure\DbChangeTrackerAdapter.cs" />
+    <Compile Include="Infrastructure\DbEntityEntryAdapter.generic.cs" />
+    <Compile Include="Infrastructure\DbEntityEntryAdapter.cs" />
     <Compile Include="Infrastructure\IDbChangeTracker.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="Infrastructure\IDbContextConfiguration.cs" />
