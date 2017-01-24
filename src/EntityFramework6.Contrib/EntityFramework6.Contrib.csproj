@@ -73,6 +73,7 @@
     <Compile Include="Infrastructure\IDbPropertyValues.cs" />
     <Compile Include="Infrastructure\IDbReferenceEntry.cs" />
     <Compile Include="Validation\DbEntityValidationResultAdapter.cs" />
+    <Compile Include="Validation\DbValidationErrorAdapter.cs" />
     <Compile Include="Validation\IDbEntityValidationResult.cs" />
     <Compile Include="IDbModelBuilder.cs" />
     <Compile Include="IDbSet.cs" />
