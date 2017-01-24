@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntityFramework6.Contrib.Infrastructure
 {
-    public class DbEntityEntryAdapter : IDbEntityEntry
+    internal class DbEntityEntryAdapter : IDbEntityEntry
     {
         private readonly DbEntityEntry _adaptee;
         private readonly Lazy<IDbPropertyValues> _currentValues;

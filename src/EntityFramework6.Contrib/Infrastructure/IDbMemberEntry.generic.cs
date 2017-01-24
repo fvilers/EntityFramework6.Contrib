@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace EntityFramework6.Contrib.Infrastructure
 {
-    public interface IDbMemberEntry
+    public interface IDbMemberEntry<TEntity, TProperty>
+        where TEntity : class
     {
-        object CurrentValue { get; set; }
-        IDbEntityEntry EntityEntry { get; }
+        TProperty CurrentValue { get; set; }
+        IDbEntityEntry<TEntity> EntityEntry { get; }
         string Name { get; }
 
-        IDbMemberEntry<TEntity, TElement> Cast<TEntity, TElement>() where TEntity : class;
         ICollection<IDbValidationError> GetValidationErrors();
     }
 }
