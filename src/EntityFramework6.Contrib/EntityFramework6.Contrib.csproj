@@ -55,6 +55,7 @@
     <Compile Include="Infrastructure\DbContextConfigurationAdapter.cs" />
     <Compile Include="Infrastructure\DbEntityEntryAdapter.generic.cs" />
     <Compile Include="Infrastructure\DbEntityEntryAdapter.cs" />
+    <Compile Include="Infrastructure\DbPropertyValuesAdapter.cs" />
     <Compile Include="Infrastructure\IDbChangeTracker.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="Infrastructure\IDbContextConfiguration.cs" />
