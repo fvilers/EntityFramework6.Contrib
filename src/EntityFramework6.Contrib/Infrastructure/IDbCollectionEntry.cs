@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,5 +12,6 @@ namespace EntityFramework6.Contrib.Infrastructure
         void Load();
         Task LoadAsync();
         Task LoadAsync(CancellationToken cancellationToken);
+        IQueryable Query();
     }
 }

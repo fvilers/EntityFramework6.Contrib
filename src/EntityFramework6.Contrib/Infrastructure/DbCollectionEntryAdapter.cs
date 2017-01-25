@@ -1,5 +1,6 @@
 using System;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -40,6 +41,11 @@ namespace EntityFramework6.Contrib.Infrastructure
         public Task LoadAsync(CancellationToken cancellationToken)
         {
             return _adaptee.LoadAsync(cancellationToken);
+        }
+
+        public IQueryable Query()
+        {
+            return _adaptee.Query();
         }
     }
 }
