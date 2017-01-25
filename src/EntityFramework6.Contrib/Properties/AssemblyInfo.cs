@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("EntityFramework6.Contrib")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("A contribution to the Microsoft EntityFramework")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Dev One")]
 [assembly: AssemblyProduct("EntityFramework6.Contrib")]
