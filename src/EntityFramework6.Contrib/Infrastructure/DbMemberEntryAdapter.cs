@@ -2,6 +2,7 @@ using EntityFramework6.Contrib.Validation;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Linq;
 
 namespace EntityFramework6.Contrib.Infrastructure
 {
@@ -28,12 +29,12 @@ namespace EntityFramework6.Contrib.Infrastructure
 
         public IDbMemberEntry<TEntity, TElement> Cast<TEntity, TElement>() where TEntity : class
         {
-            throw new NotImplementedException();
+            return new DbMemberEntryAdapter<TEntity, TElement>(_adaptee.Cast<TEntity, TElement>());
         }
 
         public ICollection<IDbValidationError> GetValidationErrors()
         {
-            throw new NotImplementedException();
+            return _adaptee.GetValidationErrors().Select(validationError => new DbValidationErrorAdapter(validationError)).ToArray();
         }
     }
 }
