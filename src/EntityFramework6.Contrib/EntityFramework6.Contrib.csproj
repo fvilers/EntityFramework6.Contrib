@@ -52,6 +52,7 @@
     <Compile Include="DatabaseAdapter.cs" />
     <Compile Include="DbContextContrib.cs" />
     <Compile Include="DbModelBuilderAdapter.cs" />
+    <Compile Include="DbSetAdapter.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="Infrastructure\DbChangeTrackerAdapter.cs" />
     <Compile Include="Infrastructure\DbCollectionEntryAdapter.generic.cs" />
