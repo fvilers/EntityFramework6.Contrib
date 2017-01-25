@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseAdapter.cs" />
     <Compile Include="DbContextContrib.cs" />
     <Compile Include="IDatabase.cs" />
     <Compile Include="Infrastructure\DbChangeTrackerAdapter.cs" />
