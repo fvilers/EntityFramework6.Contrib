@@ -51,9 +51,15 @@
   <ItemGroup>
     <Compile Include="DatabaseAdapter.cs" />
     <Compile Include="DbContextContrib.cs" />
+    <Compile Include="DbContextTransactionAdapter.cs" />
     <Compile Include="DbModelBuilderAdapter.cs" />
     <Compile Include="DbSetAdapter.cs" />
     <Compile Include="IDatabase.cs" />
+    <Compile Include="IDbContextTransaction.cs" />
+    <Compile Include="Infrastructure\DbRawSqlQueryAdapter.generic.cs" />
+    <Compile Include="Infrastructure\DbRawSqlQueryAdapter.cs" />
+    <Compile Include="Infrastructure\IDbRawSqlQuery.generic.cs" />
+    <Compile Include="Infrastructure\IDbRawSqlQuery.cs" />
     <Compile Include="Infrastructure\DbChangeTrackerAdapter.cs" />
     <Compile Include="Infrastructure\DbCollectionEntryAdapter.generic.cs" />
     <Compile Include="Infrastructure\DbCollectionEntryAdapter.cs" />
