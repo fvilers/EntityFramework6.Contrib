@@ -9,95 +9,96 @@ namespace EntityFramework6.Contrib.Infrastructure
 {
     internal class DbEntityEntryAdapter : IDbEntityEntry
     {
-        private readonly DbEntityEntry _adaptee;
+        public DbEntityEntry Adaptee { get; }
+
         private readonly Lazy<IDbPropertyValues> _currentValues;
         private readonly Lazy<IDbPropertyValues> _orignalValues;
 
         public DbEntityEntryAdapter(DbEntityEntry adaptee)
         {
             if (adaptee == null) throw new ArgumentNullException(nameof(adaptee));
-            _adaptee = adaptee;
+            Adaptee = adaptee;
             _currentValues = new Lazy<IDbPropertyValues>(() => new DbPropertyValuesAdapter(adaptee.CurrentValues));
             _orignalValues = new Lazy<IDbPropertyValues>(() => new DbPropertyValuesAdapter(adaptee.OriginalValues));
         }
 
         public IDbPropertyValues CurrentValues => _currentValues.Value;
-        public object Entity => _adaptee.Entity;
+        public object Entity => Adaptee.Entity;
         public IDbPropertyValues OriginalValues => _orignalValues.Value;
 
         public EntityState State
         {
-            get { return _adaptee.State; }
-            set { _adaptee.State = value; }
+            get { return Adaptee.State; }
+            set { Adaptee.State = value; }
         }
 
         public IDbEntityEntry<TEntity> Cast<TEntity>() where TEntity : class
         {
-            return new DbEntityEntryAdapter<TEntity>(_adaptee.Cast<TEntity>());
+            return new DbEntityEntryAdapter<TEntity>(Adaptee.Cast<TEntity>());
         }
 
         public IDbCollectionEntry Collection(string navigationProperty)
         {
-            return new DbCollectionEntryAdapter(_adaptee.Collection(navigationProperty));
+            return new DbCollectionEntryAdapter(Adaptee.Collection(navigationProperty));
         }
 
         public IDbComplexPropertyEntry ComplexProperty(string propertyName)
         {
-            return new DbComplexPropertyEntryAdapter(_adaptee.ComplexProperty(propertyName));
+            return new DbComplexPropertyEntryAdapter(Adaptee.ComplexProperty(propertyName));
         }
 
         public IDbPropertyValues GetDatabaseValues()
         {
-            return new DbPropertyValuesAdapter(_adaptee.GetDatabaseValues());
+            return new DbPropertyValuesAdapter(Adaptee.GetDatabaseValues());
         }
 
         public async Task<IDbPropertyValues> GetDatabaseValuesAsync()
         {
             return new DbPropertyValuesAdapter(
-                await _adaptee.GetDatabaseValuesAsync().ConfigureAwait(false)
+                await Adaptee.GetDatabaseValuesAsync().ConfigureAwait(false)
             );
         }
 
         public async Task<IDbPropertyValues> GetDatabaseValuesAsync(CancellationToken cancellationToken)
         {
             return new DbPropertyValuesAdapter(
-                await _adaptee.GetDatabaseValuesAsync(cancellationToken).ConfigureAwait(false)
+                await Adaptee.GetDatabaseValuesAsync(cancellationToken).ConfigureAwait(false)
             );
         }
 
         public IDbEntityValidationResult GetValidationResult()
         {
-            return new DbEntityValidationResultAdapter(_adaptee.GetValidationResult());
+            return new DbEntityValidationResultAdapter(Adaptee.GetValidationResult());
         }
 
         public IDbMemberEntry Member(string propertyName)
         {
-            return new DbMemberEntryAdapter(_adaptee.Member(propertyName));
+            return new DbMemberEntryAdapter(Adaptee.Member(propertyName));
         }
 
         public IDbPropertyEntry Property(string propertyName)
         {
-            return new DbPropertyEntryAdapter(_adaptee.Property(propertyName));
+            return new DbPropertyEntryAdapter(Adaptee.Property(propertyName));
         }
 
         public IDbReferenceEntry Reference(string navigationProperty)
         {
-            return new DbReferenceEntryAdapter(_adaptee.Reference(navigationProperty));
+            return new DbReferenceEntryAdapter(Adaptee.Reference(navigationProperty));
         }
 
         public void Reload()
         {
-            _adaptee.Reload();
+            Adaptee.Reload();
         }
 
         public Task ReloadAsync()
         {
-            return _adaptee.ReloadAsync();
+            return Adaptee.ReloadAsync();
         }
 
         public Task ReloadAsync(CancellationToken cancellationToken)
         {
-            return _adaptee.ReloadAsync(cancellationToken);
+            return Adaptee.ReloadAsync(cancellationToken);
         }
     }
 }
