@@ -27,11 +27,6 @@ namespace EntityFramework6.Contrib.Infrastructure
         public IDbEntityEntry EntityEntry => _dbEntityEntry.Value;
         public string Name => _adaptee.Name;
 
-        public IDbMemberEntry<TEntity, TElement> Cast<TEntity, TElement>() where TEntity : class
-        {
-            return new DbMemberEntryAdapter<TEntity, TElement>(_adaptee.Cast<TEntity, TElement>());
-        }
-
         public ICollection<IDbValidationError> GetValidationErrors()
         {
             return _adaptee.GetValidationErrors().Select(validationError => new DbValidationErrorAdapter(validationError)).ToArray();

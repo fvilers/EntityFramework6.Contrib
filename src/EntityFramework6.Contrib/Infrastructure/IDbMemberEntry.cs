@@ -8,8 +8,7 @@ namespace EntityFramework6.Contrib.Infrastructure
         object CurrentValue { get; set; }
         IDbEntityEntry EntityEntry { get; }
         string Name { get; }
-
-        IDbMemberEntry<TEntity, TElement> Cast<TEntity, TElement>() where TEntity : class;
+        
         ICollection<IDbValidationError> GetValidationErrors();
     }
 }
