@@ -62,6 +62,18 @@ namespace EntityFramework6.Contrib
             return _adaptee.Delete();
         }
 
+        public static bool Delete(IDbConnection existingConnection)
+        {
+            var concrete = existingConnection as DbConnection;
+
+            if (concrete == null)
+            {
+                throw new NotSupportedException();
+            }
+
+            return Database.Delete(concrete);
+        }
+
         public int ExecuteSqlCommand(string sql, params object[] parameters)
         {
             return _adaptee.ExecuteSqlCommand(sql, parameters);
@@ -97,9 +109,31 @@ namespace EntityFramework6.Contrib
             return _adaptee.Exists();
         }
 
+        public static bool Exists(IDbConnection existingConnection)
+        {
+            var concrete = existingConnection as DbConnection;
+
+            if (concrete == null)
+            {
+                throw new NotSupportedException();
+            }
+
+            return Database.Exists(concrete);
+        }
+
+        public static bool Exists(string nameOrConnectionString)
+        {
+            return Database.Exists(nameOrConnectionString);
+        }
+
         public void Initialize(bool force)
         {
             _adaptee.Initialize(force);
+        }
+
+        public static void SetInitializer<TContext>(IDatabaseInitializer<TContext> strategy) where TContext : DbContext
+        {
+            Database.SetInitializer(strategy);
         }
 
         public IDbRawSqlQuery SqlQuery(Type elementType, string sql, params object[] parameters)
